@@ -1,22 +1,9 @@
-name: Main Pipeline
+name: CI/CD Pipeline
 
-on: 
-  workflow_dispatch:
-    push:
-      branches:
-        - "main"
-
+on: push
 jobs:
-  Unittest:
+  hello-world:
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v3
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 18
-    - name: "Lanzar test unitario"
-      run: |
-        set -ev
-        cd modern-web-app
-        npm i 
-        npm run test:unit
+      - name: Hello World step
+        run: echo "Hello World!"
