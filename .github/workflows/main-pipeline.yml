@@ -1,9 +1,9 @@
 name: Main Pipeline
 on: 
   workflow_dispatch:
-    push:
-      branches:
-        - "main"
+  push:
+    branches:
+      - "main"
 
 jobs:
   Unittest:
@@ -17,5 +17,5 @@ jobs:
       run: |
         set -ev
         cd modern-web-app
-        npm i 
+        npm ci 
         npm run test:unit
